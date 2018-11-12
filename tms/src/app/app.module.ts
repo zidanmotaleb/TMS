@@ -11,6 +11,16 @@ import { FlightComponent } from './ticket/flight/flight.component';
 import { PassengerComponent } from './ticket/passenger/passenger.component';
 
 
+import {FormsModule} from '@angular/forms';
+import {RouterModule,  Routes} from '@angular/router';
+
+const appRoutes: Routes=[
+  { path: '', component: LoginComponent  },
+  { path: 'ticket', component: TicketComponent  },
+  { path: 'invoice', component: InvoiceComponent  }
+  { path: 'report', component: ReportComponent  }
+
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +33,11 @@ import { PassengerComponent } from './ticket/passenger/passenger.component';
 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
+    //Routes
+
   ],
   providers: [],
   bootstrap: [AppComponent]
