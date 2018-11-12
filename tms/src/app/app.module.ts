@@ -7,6 +7,8 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { ReportComponent } from './report/report.component';
 
 import { LoginComponent } from './login/login.component';
+import { FlightComponent } from './ticket/flight/flight.component';
+import { PassengerComponent } from './ticket/passenger/passenger.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { LoginComponent } from './login/login.component';
     TicketComponent,
     InvoiceComponent,
     ReportComponent,
-    LoginComponent
+    LoginComponent,
+    FlightComponent,
+    PassengerComponent
 
   ],
   imports: [
