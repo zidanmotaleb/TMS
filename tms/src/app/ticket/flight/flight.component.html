@@ -1,3 +1,141 @@
 <p>
   flight works!
 </p>
+
+<hr>
+
+<p *ngIf="!noTravlers; else noTrv" [ngStyle]="{backgroundColor: getColor()}"> Number of travelers is  {{TravelNumber}}</p>
+   <ng-template #noTrv>
+       <p [ngStyle]="{backgroundColor: getColor()}">Please enter the information for {{TravelNumber}} names, thank you.!!!</p>
+    </ng-template>
+ <div class="row">
+       <div class="col-md-2">
+           <h4>No. of Passengers</h4>
+       </div>
+       <div class="col-md-1">
+        <input
+          style="center"
+          class="form-control"
+          type="number"
+          min="1"
+          placeholder="1"
+          id="example-number-input"
+          (input)="getTrevelNumber($event)"
+         [(ngModel)]="TravelNumber"
+        >
+       </div>
+    </div>
+<br>
+
+<!------------------------------------->
+
+<p> old version</p>
+
+<div class = "container" id="flightInfo" >
+  <hr>
+    <h3>Booking Form</h3>
+  <hr>
+
+  <!-----------------Round trip or Oneway------------------------------->
+ 
+<!--------------------------- End testing --------------- -->
+
+
+<br>
+<br>
+
+  <!-- <div id="Return" class="tabcontent"> -->
+    <div class="form-group row">
+      <div class="col-md-3">
+        <input class="form-control" type="search" value="Flying From..." id="example-search-input">
+      </div>
+    <div class="col-md-3">
+        <input class="form-control" type="search" value="Flying To..." id="example-search-input">
+    </div>
+    <div class="col-md-3">
+        <input class="form-control" type="date" value="Departing" id="example-date-input">
+    </div>
+    <div class="col-md-3">
+      <input class="form-control" type="date" value="Return" id="example-date-input">
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <h6>Airlines</h6>
+    <select>
+      <option value="noThing">......</option>
+      <option value="One">Air Canada</option>
+      <option value="Two">Tunis Air</option>
+      <option value="Three">Emirates</option>
+      <option value="Four">Qatar Airways</option>
+      <option value="Five">Turkish Airlines</option>
+      <option value="Six">Libyan Airlines</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <h6>Cabin</h6>
+    <select>
+      <option value="noThing">Economy</option>
+      <option value="One">Premium Economy</option>
+      <option value="Two">Business</option>
+      <option value="Three">First Class</option>
+    </select>
+  </div>
+  </div>
+  <hr>
+
+
+
+
+
+
+<p> Running now </p>
+ <div *ngFor="let number of arrayOfTravelers">
+   <!--  Customer info starts here -->
+   <div class="form-group row">
+
+   <!-- first name -->
+     <div class="col-2">
+       <input class="form-control" type="example-text-input" placeholder="First name..." id="example-text-input">
+     </div>
+   <!-- first name ends here -->
+   <!-- last name starts here -->
+     <div class="col-2">
+       <input class="form-control" type="text" placeholder="Last name..." id="example-text-input">
+     </div>
+   <!-- last name ends here -->
+   <!-- gender starts here-->
+     <div class="col-md-1">
+       <select>
+         <option value="noThing">Gander</option>
+         <option value="Dr">Male</option>
+         <option value="Mr">Famel</option>
+         <option value="Mrs">Other</option>
+       </select>
+     </div>
+   <!-- gender ends here -->
+   <!-- DOB starts here -- >
+     <!-- date of birth ends here -->
+     <!-- tel information starts here -->
+     <div class="col-md-2">
+
+     <input class="form-control" type="date" value="DoB..." id="example-datetime-local-input">
+     </div>
+     <div class="col-md-2">
+     <input class="form-control" type="tel" placeholder="Telephone..." id="example-tel-input">
+     </div>
+     <!-- tel info ends here -->
+     <!-- email info starts right here -->
+     <div class="col-2">
+       <input class="form-control" type="email" placeholder="E-mail..." id="example-email-input">
+     </div>
+    <!-- email info ends here -->
+   </div>
+   <!-- customer information stars here -->
+
+
+
+ </div>
+
+
+<!------------------------------------->

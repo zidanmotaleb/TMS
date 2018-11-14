@@ -1,3 +1,88 @@
 <p>
   passenger works!
 </p>
+<hr>
+
+<p *ngIf="!noTravlers; else noTrv" [ngStyle]="{backgroundColor: getColor()}"> Number of travelers is  {{TravelNumber}}</p>
+   <ng-template #noTrv>
+       <p [ngStyle]="{backgroundColor: getColor()}">Please enter the information for {{TravelNumber}} names, thank you.!!!</p>
+    </ng-template>
+ <div class="row">
+       <div class="col-md-2">
+           <h4>No. of Passengers</h4>
+       </div>
+       <div class="col-md-1">
+        <input
+          style="center"
+          class="form-control"
+          type="number"
+          min="1"
+          placeholder="1"
+          id="example-number-input"
+          (input)="getTrevelNumber($event)"
+         [(ngModel)]="TravelNumber"
+        >
+       </div>
+    </div>
+<br>
+
+<!------------------------------------->
+
+ <div *ngFor="let number of arrayOfTravelers">
+   <!--  Customer info starts here -->
+   <div class="form-group row">
+   <!--title -->
+     <div class="col-md-0.5">
+       <select>
+         <option value="noThing">Title</option>
+         <option value="Dr">Dr.</option>
+         <option value="Mr">Mr.</option>
+         <option value="Mrs">Mrs.</option>
+         <option value="Ms">Ms.</option>
+       </select>
+     </div> <!-- Title ends here -->
+   <!-- first name -->
+     <div class="col-2">
+       <input class="form-control" type="example-text-input" placeholder="First name..." id="example-text-input">
+     </div>
+   <!-- first name ends here -->
+   <!-- last name starts here -->
+     <div class="col-2">
+       <input class="form-control" type="text" placeholder="Last name..." id="example-text-input">
+     </div>
+   <!-- last name ends here -->
+   <!-- gender starts here-->
+     <div class="col-md-1">
+       <select>
+         <option value="noThing">Gander</option>
+         <option value="Dr">Male</option>
+         <option value="Mr">Famel</option>
+         <option value="Mrs">Other</option>
+       </select>
+     </div>
+   <!-- gender ends here -->
+   <!-- DOB starts here -- >
+     <!-- date of birth ends here -->
+     <!-- tel information starts here -->
+     <div class="col-md-2">
+
+     <input class="form-control" type="date" value="DoB..." id="example-datetime-local-input">
+     </div>
+     <div class="col-md-2">
+     <input class="form-control" type="tel" placeholder="Telephone..." id="example-tel-input">
+     </div>
+     <!-- tel info ends here -->
+     <!-- email info starts right here -->
+     <div class="col-2">
+       <input class="form-control" type="email" placeholder="E-mail..." id="example-email-input">
+     </div>
+    <!-- email info ends here -->
+   </div>
+   <!-- customer information stars here -->
+
+
+
+ </div>
+
+
+<!------------------------------------->

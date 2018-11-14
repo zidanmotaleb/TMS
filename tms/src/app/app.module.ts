@@ -13,12 +13,16 @@ import { PassengerComponent } from './ticket/passenger/passenger.component';
 
 import {FormsModule} from '@angular/forms';
 import {RouterModule,  Routes} from '@angular/router';
+import { PriceComponent } from './ticket/price/price.component';
 
 const appRoutes: Routes=[
   { path: '', component: LoginComponent  },
   { path: 'ticket', component: TicketComponent  },
-  { path: 'invoice', component: InvoiceComponent  }
-  { path: 'report', component: ReportComponent  }
+  { path: 'invoice', component: InvoiceComponent  },
+  { path: 'report', component: ReportComponent  },
+  {path: 'flightInfo', component: FlightComponent},
+  {path: 'passengerInfo', component: PassengerComponent},
+  {path: 'priceInfo', component: PriceComponent}
 
 ];
 @NgModule({
@@ -29,7 +33,8 @@ const appRoutes: Routes=[
     ReportComponent,
     LoginComponent,
     FlightComponent,
-    PassengerComponent
+    PassengerComponent,
+    PriceComponent
 
   ],
   imports: [
